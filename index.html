@@ -3,303 +3,257 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Utsav Wraps | Eco-Luxury Gift Packaging</title>
+<title>Utsav Wraps | Celebrate Every Moment</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
-body{background:#faf7f2;color:#333;line-height:1.6;}
 
-header{
-display:flex;justify-content:space-between;align-items:center;
-padding:15px 50px;background:#fff;
-box-shadow:0 2px 12px rgba(0,0,0,0.08);
-position:sticky;top:0;z-index:1000;
+/* ---------- GLOBAL ---------- */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Poppins',sans-serif;background:#faf7f2;color:#333;}
+h1,h2,h3{font-family:'Playfair Display',serif;}
+section{padding:70px 8%;}
+button{cursor:pointer;border:none;}
+
+/* ---------- NAVBAR ---------- */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:#fff;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 2px 15px rgba(0,0,0,0.05);
 }
-.logo img{height:55px;}
-nav a{
-margin:0 14px;text-decoration:none;color:#333;font-weight:500;
-}
-nav a:hover{color:#e65100;}
-.cart-btn{
-background:#e65100;color:#fff;padding:6px 15px;
-border-radius:25px;cursor:pointer;
+.logo{font-size:24px;font-weight:700;color:#8b1e3f;}
+nav ul{display:flex;gap:25px;list-style:none;}
+nav ul li{cursor:pointer;font-weight:500;}
+nav ul li:hover{color:#8b1e3f;}
+.nav-icons{display:flex;gap:15px;}
+.nav-icons button{
+background:#8b1e3f;color:#fff;padding:8px 14px;border-radius:6px;
 }
 
+/* ---------- HERO ---------- */
 .hero{
-height:500px;
-background:linear-gradient(rgba(0,0,0,0.45),rgba(0,0,0,0.45)),
-url('https://images.unsplash.com/photo-1513151233558-d860c5398176');
-background-size:cover;background-position:center;
-display:flex;flex-direction:column;
-align-items:center;justify-content:center;
-color:#fff;text-align:center;padding:20px;
+height:90vh;
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+url('https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da');
+background-size:cover;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+color:#fff;
 }
-.hero h1{font-size:42px;margin-bottom:15px;}
-.hero p{font-size:20px;max-width:700px;}
+.hero h1{font-size:55px;margin-bottom:15px;}
+.hero p{font-size:18px;margin-bottom:20px;}
+.hero button{background:#fff;color:#8b1e3f;padding:12px 25px;border-radius:30px;font-weight:600;}
 
-.section{padding:80px 60px;}
-.section h2{text-align:center;margin-bottom:40px;color:#e65100;font-size:30px;}
-
-.categories{
-display:flex;justify-content:center;gap:30px;flex-wrap:wrap;
-}
-.category{
-background:#fff;padding:30px;border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-width:250px;text-align:center;
+/* ---------- SEARCH ---------- */
+.search-box{text-align:center;}
+.search-box input{
+width:60%;
+padding:12px;
+border:1px solid #ccc;
+border-radius:30px;
 }
 
+/* ---------- PRODUCTS ---------- */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:30px;
 }
-.product{
-background:#fff;padding:18px;border-radius:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
-transition:0.3s;
-}
-.product:hover{transform:translateY(-5px);}
-.product img{
-width:100%;height:240px;object-fit:cover;border-radius:10px;
-}
-.product h3{margin:10px 0;}
-select,input{width:100%;padding:8px;margin-top:8px;}
-.qty{display:flex;justify-content:space-between;margin-top:10px;}
-.qty button{padding:5px 12px;}
-.add-btn{
-background:#e65100;color:#fff;border:none;
-padding:10px;margin-top:10px;width:100%;
-border-radius:6px;cursor:pointer;
-}
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;text-align:center;
-}
-.feature-box{
-background:#fff;padding:30px;border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-.testimonials{
-display:flex;gap:25px;flex-wrap:wrap;justify-content:center;
-}
-.testimonial{
-background:#fff;padding:25px;width:300px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-.about{
-max-width:800px;margin:auto;text-align:center;
-}
-
-footer{
-background:#222;color:#fff;
-padding:60px;text-align:center;margin-top:50px;
-}
-
-/* Cart */
-.cart-panel{
-position:fixed;right:-400px;top:0;
-width:360px;height:100%;
+.card{
 background:#fff;
-box-shadow:-4px 0 12px rgba(0,0,0,0.2);
-padding:20px;overflow-y:auto;
-transition:0.3s;z-index:2000;
+border-radius:15px;
+overflow:hidden;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+transition:0.4s;
 }
-.cart-panel.active{right:0;}
-.cart-item{border-bottom:1px solid #ddd;padding:10px 0;}
-.pay-btn{
-background:#e65100;color:#fff;
-padding:10px;border:none;width:100%;
-margin-top:10px;border-radius:6px;cursor:pointer;
+.card:hover{transform:translateY(-8px);}
+.card img{width:100%;height:250px;object-fit:cover;}
+.card-content{padding:20px;}
+.price{color:#8b1e3f;font-weight:600;margin:8px 0;}
+select{width:100%;padding:8px;margin:8px 0;}
+.card button{
+background:#8b1e3f;color:#fff;padding:10px;width:100%;border-radius:8px;
 }
+
+/* ---------- CART ---------- */
+.cart-box{
+background:#fff;
+padding:25px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+.cart-item{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+.total{font-weight:600;margin-top:10px;}
+
+/* ---------- CHECKOUT ---------- */
+.checkout input, .checkout select{
+width:100%;
+padding:10px;
+margin:8px 0;
+}
+.checkout button{
+background:#8b1e3f;color:#fff;padding:12px;border-radius:8px;width:100%;
+}
+
+/* ---------- ABOUT ---------- */
+.about img{
+width:100%;
+max-width:500px;
+border-radius:15px;
+margin-top:20px;
+}
+
+/* ---------- CONTACT ---------- */
+.contact{
+background:#8b1e3f;
+color:#fff;
+text-align:center;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:768px){
+.hero h1{font-size:32px;}
+.search-box input{width:90%;}
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-<div class="logo">
-<img src="logo.png" alt="Utsav Wraps">
-</div>
-
 <nav>
-<a href="#">Home</a>
-<a href="#categories">Categories</a>
-<a href="#shop">Shop</a>
-<a href="#innovation">Innovation</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<span class="cart-btn" onclick="toggleCart()">
-Cart (<span id="cart-count">0</span>)
-</span>
+<div class="logo">Utsav Wraps</div>
+<ul>
+<li>Home</li>
+<li>Collections</li>
+<li>Wedding</li>
+<li>Contact</li>
+</ul>
+<div class="nav-icons">
+<button onclick="showCart()">Cart</button>
+<button onclick="openLogin()">Login</button>
+</div>
 </nav>
-</header>
 
-<div class="hero">
-<h1>Innovative Eco-Luxury Gift Packaging</h1>
-<p>Reusable Potli Bags with Seed Tags, QR Memory & Sustainable Return Model</p>
-</div>
-
-<!-- CATEGORIES -->
-<section class="section" id="categories">
-<h2>Our Collections</h2>
-<div class="categories">
-<div class="category"><h3>Festival Collection</h3><p>Diwali, Rakhi, Eid, Christmas & More</p></div>
-<div class="category"><h3>Wedding Collection</h3><p>Shagun, Mehendi, Return Gifts</p></div>
-<div class="category"><h3>Corporate Gifting</h3><p>Premium Customized Branding</p></div>
-</div>
+<section class="hero">
+<h1>Celebrate Every Moment</h1>
+<p>Luxury Customized Potli Bags for Weddings & Festivals</p>
+<button>Shop Now</button>
 </section>
 
-<!-- SHOP -->
-<section class="section" id="shop">
-<h2>Featured Products</h2>
-<div class="products">
+<section class="search-box">
+<h2>Search Your Collection</h2>
+<input type="text" id="search" placeholder="Karva Chauth, Diwali, Wedding..." onkeyup="searchProducts()">
+</section>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1607083206869-4c7672e72a8a">
-<h3>Festive Designer Potli</h3>
-<select class="size">
-<option value="">Select Size</option>
-<option value="XS" data-price="149">Extra Small (Jewelry) ₹149</option>
-<option value="Small" data-price="249">Small ₹249</option>
-<option value="Medium" data-price="349">Medium ₹349</option>
-<option value="Extra Medium" data-price="449">Extra Medium ₹449</option>
+<section class="products" id="productContainer">
+
+<div class="card" data-name="wedding family bride groom">
+<img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c">
+<div class="card-content">
+<h3>Wedding Custom Potli</h3>
+<p>Family Name / Bride & Groom Name Available</p>
+<select onchange="updatePrice(this)">
+<option value="149">Extra Small - ₹149</option>
+<option value="249">Small - ₹249</option>
+<option value="349">Medium - ₹349</option>
+<option value="449">Extra Medium - ₹449</option>
 </select>
-<div class="qty">
-<button onclick="changeQty(this,-1)">-</button>
-<input type="number" value="1" min="1">
-<button onclick="changeQty(this,1)">+</button>
+<p class="price">₹149</p>
+<button onclick="addToCart(this)">Add to Cart</button>
 </div>
-<button class="add-btn" onclick="addToCart(this)">Add to Cart</button>
 </div>
 
-</div>
 </section>
 
-<!-- INNOVATION -->
-<section class="section" id="innovation">
-<h2>Our Unique Innovation</h2>
-<div class="features">
-<div class="feature-box">
-<h3>🌱 Seed-Integrated Tag</h3>
-<p>Plant the tag after use & grow a tree. Sustainable gifting solution.</p>
-</div>
-<div class="feature-box">
-<h3>📱 Memory QR Code</h3>
-<p>Attach personalized video messages or wedding invites.</p>
-</div>
-<div class="feature-box">
-<h3>🔁 Return & Rebuy Model</h3>
-<p>Return used potlis & earn loyalty credits.</p>
-</div>
-</div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="section">
-<h2>Customer Testimonials</h2>
-<div class="testimonials">
-<div class="testimonial">
-<p>"Beautiful and eco-friendly concept. Perfect for my wedding."</p>
-<b>- Priya Sharma</b>
-</div>
-<div class="testimonial">
-<p>"QR memory feature impressed all our guests!"</p>
-<b>- Corporate Client</b>
-</div>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section class="section" id="about">
-<h2>About Utsav Wraps</h2>
-<div class="about">
-<p>Utsav Wraps is an eco-conscious startup focused on transforming traditional gift wrapping into sustainable, reusable, and memory-preserving packaging solutions.</p>
-</div>
-</section>
-
-<!-- CART -->
-<div class="cart-panel" id="cartPanel">
+<section>
 <h2>Your Cart</h2>
-<div id="cartItems"></div>
-<h3>Total: ₹<span id="total">0</span></h3>
-<select>
-<option>Payment Method</option>
-<option>UPI</option>
-<option>Card</option>
-<option>Cash on Delivery</option>
-</select>
-<button class="pay-btn" onclick="placeOrder()">Place Order</button>
-</div>
+<div class="cart-box" id="cartBox"></div>
+<p class="total" id="totalPrice">Total: ₹0</p>
+</section>
 
-<footer id="contact">
-<h2>Utsav Wraps</h2>
-<p>Email: support@utsavwraps.com</p>
-<p>Phone: +91 9876543210</p>
-<p>© 2026 Utsav Wraps | Sustainable Celebrations</p>
-</footer>
+<section class="checkout">
+<h2>Checkout</h2>
+<input placeholder="Full Name">
+<input placeholder="Email">
+<input placeholder="Mobile">
+<input placeholder="Address">
+<select>
+<option>Cash on Delivery</option>
+<option>UPI</option>
+<option>Credit / Debit Card</option>
+</select>
+<button>Place Order</button>
+</section>
+
+<section class="about">
+<h2>Our Story</h2>
+<p>Utsav Wraps celebrates Indian traditions through premium handcrafted potli designs for weddings & festivals.</p>
+<img src="YOUR_HISTORY_IMAGE.jpg">
+</section>
+
+<section class="contact">
+<h2>Contact Us</h2>
+<p>Email: hello@utsavwraps.in</p>
+<p>Phone: +91 98765 43210</p>
+<p>Address: Nagpur, Maharashtra, India</p>
+</section>
 
 <script>
-let cart=[];
 
-function toggleCart(){
-document.getElementById("cartPanel").classList.toggle("active");
-}
+let total = 0;
 
-function changeQty(btn,amount){
-let input=btn.parentElement.querySelector("input");
-let val=parseInt(input.value);
-if(val+amount>=1){input.value=val+amount;}
+function updatePrice(select){
+let price = select.value;
+select.parentElement.querySelector(".price").innerText = "₹" + price;
 }
 
 function addToCart(btn){
-let product=btn.parentElement;
-let name=product.querySelector("h3").innerText;
-let sizeSelect=product.querySelector(".size");
-let selected=sizeSelect.options[sizeSelect.selectedIndex];
-if(selected.value===""){alert("Select size");return;}
-let price=parseInt(selected.getAttribute("data-price"));
-let qty=parseInt(product.querySelector("input").value);
-cart.push({name,size:selected.value,price,qty});
-updateCart();
+let card = btn.parentElement;
+let name = card.querySelector("h3").innerText;
+let price = parseInt(card.querySelector("select").value);
+
+let item = document.createElement("div");
+item.classList.add("cart-item");
+item.innerHTML = name + " - ₹" + price + 
+" <button onclick='removeItem(this,"+price+")'>X</button>";
+
+document.getElementById("cartBox").appendChild(item);
+
+total += price;
+document.getElementById("totalPrice").innerText = "Total: ₹" + total;
 }
 
-function updateCart(){
-let cartDiv=document.getElementById("cartItems");
-cartDiv.innerHTML="";
-let total=0;
-cart.forEach((item,index)=>{
-total+=item.price*item.qty;
-cartDiv.innerHTML+=`
-<div class="cart-item">
-<b>${item.name}</b><br>
-Size: ${item.size}<br>
-Qty: ${item.qty}<br>
-Price: ₹${item.price*item.qty}<br>
-<button onclick="removeItem(${index})">Remove</button>
-</div>`;
+function removeItem(btn,price){
+btn.parentElement.remove();
+total -= price;
+document.getElementById("totalPrice").innerText = "Total: ₹" + total;
+}
+
+function searchProducts(){
+let input = document.getElementById("search").value.toLowerCase();
+let cards = document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+let name = card.getAttribute("data-name");
+card.style.display = name.includes(input) ? "block" : "none";
 });
-document.getElementById("total").innerText=total;
-document.getElementById("cart-count").innerText=cart.length;
 }
 
-function removeItem(index){
-cart.splice(index,1);
-updateCart();
-}
-
-function placeOrder(){
-if(cart.length===0){alert("Cart is empty");return;}
-alert("Order Placed Successfully 🎉");
-cart=[];
-updateCart();
-toggleCart();
-}
 </script>
 
 </body>
